@@ -13,9 +13,15 @@ while numero <10:
 
 OBS: é importante no loop while que cuidemos do critério de parada para nano causar um loop infinito
 
+
+#Ex4
+resposta = 'N'
+while resposta != 'sim':
+    resposta = input("Acabou?: ")
+print('ok')
 """""
 
-#Ex
+#Ex4
 resposta = 'N'
 while resposta != 'sim':
     resposta = input("Acabou?: ")
