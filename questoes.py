@@ -80,3 +80,42 @@ VUNIT2 = float(VUNIT2)
 VP = (NUM1*VUNIT1) + (NUM2*VUNIT2)
 print('VALOR A PAGAR: R$ %.2f' %VP)
 """""
+"""""
+#Problema 1011
+pi = 3.14159
+r = int(input(""))
+v = (4/3.00)*pi*(r**3)
+print('VOLUME = %.3f' % v)
+"""""
+"""""
+#Problema 1012
+pi = 3.14159
+a,b,c = input().split(" ")
+A = float(a)
+B = float(b)
+C = float(c)
+ST = (A*C)/2
+SC = pi*(C**2)
+STRAP = ((A+B)*C)/2
+SQ = B**2
+SR = A*B
+print('TRIANGULO: %.3f' % ST)
+print('CIRCULO: %.3f' % SC)
+print('TRAPEZIO: %.3f' % STRAP)
+print('QUADRADO: %.3f' % SQ)
+print('RETANGULO: %.3f' % SR)
+"""""
+
+#Problema 1013
+A,B,C = input().split(" ")
+a=int(A)
+b=int(B)
+s=int(C)
+MaiorAB = ((a+b+(a*b*s)*(a-b)))/2
+if a>b and a>s:
+    print(f'{a} eh o maior')
+if b>a and b>s:
+    print(f'{b} eh o maior')
+if s>a and s>b:
+    print(f'{s} eh o maior')
+
