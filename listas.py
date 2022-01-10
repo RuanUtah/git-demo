@@ -74,32 +74,205 @@ print(lista6)
 #Podemos contar quantos elementos existem na lista
 print(len(lista2))
 --------------------------------------------
-
---------------------------------------------
-
---------------------------------------------
-
---------------------------------------------
-
---------------------------------------------
-"""""
-
-lista1 = [1,3,4,2,7,9,5,6,8,10] #inteiro
-lista2 = ['R','U','A','N','','U','T','A','H'] #caracteres = string
-lista3 = []
-lista4 = list(range(15)) #gera inteiros de 0 a 10
-lista5 = list('Ruan Utah') #lista5 igual a lista2
-
 #podemos remover facilmenteo último elemento de uma lista
 print(lista5)
 lista5.pop() #nao somento remove o ultimo elementos mas também o retorna
 print(lista5)
 lista5.pop(3) #remove o elemento pelo índice
 #OBS: os elementos à direita seu deslocados para a esquerda
-#OBS: o pop só remove o elemento no índice caso esse índice(posicao) exista
+#OBS: o pop só remove o elemento no índice caso esse índice(posicao) exista, caso nao tenha
+# dará um index error
 print(lista5)
 
+--------------------------------------------
+#podemos remover facilmenteo último elemento de uma lista
+print(lista5)
+lista5.pop() #nao somento remove o ultimo elementos mas também o retorna
+print(lista5)
+lista5.pop(3) #remove o elemento pelo índice
+#OBS: os elementos à direita seu deslocados para a esquerda
+#OBS: o pop só remove o elemento no índice caso esse índice(posicao) exista, caso nao tenha
+# dará um index error
+print(lista5)
 
-#lista5.remove('a') #o remove remove um elemento escolhido e todas suas cópias na lista
-#print(lista5)
+lista2.remove('A') #o remove remove um elemento escolhido
+print(lista2)
+--------------------------------------------
 
+#podemos remover todos os elementos da lista (zerar)
+print(lista5)
+lista5.clear()
+print(lista5)
+--------------------------------------------
+
+#Podemos repetir uma elementos em uma lista
+nova = [1,2,3]
+nova = nova*3
+print(nova)
+--------------------------------------------
+
+#podemos converter uma string para uma lista
+#Ex1:
+curso = 'Programação em python: Essencial'
+print(curso)
+curso = curso.split()
+print(curso)
+#OBS: o split por padrao separa os elementos da lista pelo espaço entre elas
+
+#Ex2:
+curso = 'Programação,em,python:,Essencial'
+curso = curso.split(',') #o separador pode ser referenciado no parâmetro
+print(curso)
+--------------------------------------------
+
+lista6 = ['Programação', 'em', 'Python:','Essencial']
+#convertendo uma lista em string
+print(lista6)
+
+#pega a lista6, coloca espaço entre cada elemento e transforma em string
+curso = ' '.join(lista6) 
+print(curso)
+
+#pega a lista6, coloca cifrão entre cada elemento e transforma em string
+curso = '$'.join(lista6)
+print(curso)
+--------------------------------------------
+
+#podemos colocar qualquer tipo de dado em uma lista, mesmo misturando dados
+lista6 = [1, 2, 34, True, 'Geek', 'd', [1, 2, 3], 4356789]
+print(lista6)
+print(type(lista6))
+--------------------------------------------
+
+#Iterando sobre listas
+#Ex1: Usando for
+
+soma = '' 
+for elemento in lista2:
+    print(elemento)
+    soma = soma + elemento
+print(soma)
+#obs: dessa maneira, pega uma string e junta tudo
+
+soma = 0
+for elemento in lista4:
+    print(elemento)
+    soma = soma + elemento
+print(soma)
+
+
+#Ex2: usando while
+
+#Cria uma variável do tipo lista
+carrinhodecompras = []
+#Cria uma variável do tipo string
+produto = ''
+
+while produto != 'sair':
+    print("Adicione um produto na lista ou digite 'sair' para sair: ")
+    produto = input()
+    if produto != 'sair':
+        carrinhodecompras.append(produto)
+
+for produto in carrinhodecompras:
+    print('****')
+    print(produto)
+--------------------------------------------
+
+#Utilizando variaveis em listas
+numeros = [1, 2, 3, 4, 5]
+print(numeros)
+
+num1 = 1
+num2 = 2
+num3 = 3
+num4 = 4
+num5 = 5
+numeros = [num1, num2, num3, num4, num5]
+print(numeros)
+--------------------------------------------
+
+#Fazemos acesso aos elementos de forma indexada 
+cores = ['verde', 'amarelo', 'azul', 'branco']
+print(cores[0])
+print(cores[1])
+print(cores[2])
+print(cores[3])
+
+#fazemos acesso aos elementos de forma indexada inversa
+# O índice negativo funciona em uma lista em formato circular
+# O final de um elemento está ligado ao inicio da lista
+
+print(cores[-1])
+print(cores[-2])
+print(cores[-3])
+print(cores[-4])
+print(cores[-5]) #indexerror porque nao existe índice -5
+--------------------------------------------
+
+for cor in cores:
+    print(cor)
+
+indice = 0
+while indice < len(cores):
+    print(cores[indice])
+    indice = indice + 1
+--------------------------------------------
+
+#Gerar indice em um for
+for indice, cor, in enumerate(cores):
+    print(indice, cor)
+
+#listas aceitam valores repetidos
+--------------------------------------------
+
+lista = []
+lista.append(42)
+lista.append(42)
+lista.append(33)
+lista.append(33)
+lista.append(42)
+print(lista)
+--------------------------------------------
+
+##Outros métodos uteis mas nao tao importantes
+
+#encontrar o índice de um elemento na lista
+numeros = [5, 6, 7, 5, 8, 9, 10]
+
+#em qual indice está o valor 6?
+print(numeros.index(6))
+
+#em qual indice está o valor 9?
+print(numeros.index(9))
+
+#OBS: caso nao tenha esse elmento na lista, será apresentado ValueError
+#print(numeros.index(15))
+
+#retorna o indice do primeiro elemento encontrado
+print(numeros.index(5))
+
+#Podemos fazer uma busca dentro de um range, ou seja, qual indice começar a buscar
+print(numeros.index(5, 1)) #buscando a partir do indice 1
+print(numeros.index(5, 2)) #buscando a partir do indice 2
+print(numeros.index(5, 3)) #buscando a partir do indice 3
+#print(numeros.index(5, 4)) #buscando a partir do indice 4
+#OBS: Caso nao encontre, ValueError
+
+#podemos fazer busca dentro de um range, inicio/fim
+print(numeros.index(8, 3, 6)) #busca o indice do valor 8 entre os indices 3 a 6
+"""""
+
+#Revisao de slicing
+#lista[inicio:fim:passo]
+#range[inicio:fim:passo]
+
+#Trabalhando com slicing de listas com o parametro 'inicio'
+
+lista = [1, 2, 3, 4]
+print(lista[1:]) #iniciando do indice 1 e pegando todos os restantes
+
+#Trabalhando com slice da lista com parametro 'fim'
+
+print(lista[:2]) #começa em 0, pega até o indice 2 - 1
+print(lista[:4]) #começa em 0, pega até o indice 4 - 1
