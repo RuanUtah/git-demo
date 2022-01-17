@@ -105,7 +105,7 @@ print('TRAPEZIO: %.3f' % STRAP)
 print('QUADRADO: %.3f' % SQ)
 print('RETANGULO: %.3f' % SR)
 """""
-
+"""""
 #Problema 1013
 A,B,C = input().split(" ")
 a=int(A)
@@ -118,4 +118,32 @@ if b>a and b>s:
     print(f'{b} eh o maior')
 if s>a and s>b:
     print(f'{s} eh o maior')
+"""""
+"""""
+#Problema 1014
+X = int(input())
+Y = float(input())
+C = X/Y
+print(f'{C:.3f} km/l')
+"""""
+"""""
+#Problema 1015
+a,b = input().split(" ")
+x1 = float(a)
+y1 = float(b)
+c,d = input().split(" ")
+x2 = float(c)
+y2 = float(d)
+dist = (((x2-x1)**2) + ((y2-y1)**2))**(1/2)
+print(f'{dist:.4f}')
+"""""
+"""""
+#Problema 1015
+X = 60
+Y = 90
+delt = 1/2
+dist = int(input())
+tempo = dist/delt
+print(f'{tempo:.0f} minutos')
+"""""
 

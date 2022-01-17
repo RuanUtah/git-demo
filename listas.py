@@ -1,5 +1,5 @@
 """""
-Listas
+Listas (list)
 
 >> Listas em python funciona como vetores/ matrizes (arrays) em outras linguagens,
 com a diferença de serem DINÂMICOS e também de podermos colocar QUALQUER tipo de dado
@@ -13,7 +13,7 @@ Python:
 lista1 = [1,2,3,4,5,6,7,8,9,10] #inteiro
 lista2 = ['R','U','A','N','','U','T','A','H'] #caracteres = string
 lista3 = []
-lista4 = list(range(15)) #gera inteiros de 0 a 10
+lista4 = list(range(15)) #gera inteiros de 0 a 14
 lista5 = list('Ruan Utah') #lista5 igual a lista2
 
 #Podemos facilmente checar se determinado valor está contido na lista
@@ -261,7 +261,7 @@ print(numeros.index(5, 3)) #buscando a partir do indice 3
 
 #podemos fazer busca dentro de um range, inicio/fim
 print(numeros.index(8, 3, 6)) #busca o indice do valor 8 entre os indices 3 a 6
-"""""
+--------------------------------------------
 
 #Revisao de slicing
 #lista[inicio:fim:passo]
@@ -276,3 +276,84 @@ print(lista[1:]) #iniciando do indice 1 e pegando todos os restantes
 
 print(lista[:2]) #começa em 0, pega até o indice 2 - 1
 print(lista[:4]) #começa em 0, pega até o indice 4 - 1
+print(lista[1:3]) #começa em 1m pega até o indice 3 - 1
+
+#Trabalhando em lista com slice de parâmetro 'passo'
+print(lista[1::2]) #começa em 1, vai até o final de 2 em 2
+print(lista[::2]) #começa em zero e vai até o final de 2 em 2
+print(lista[1::-1]) #começa em 1, e inverter a lista
+--------------------------------------------
+#invertendo valores em uma lista
+nomes = ['Geek', 'University']
+nomes[0],nomes[1] = nomes[1], nomes[0]
+print(nomes)
+#ou mais fácil
+nomes = ['Geek', 'University']
+nomes.reverse()
+print(nomes)
+--------------------------------------------
+#Soma*, valor máximo*, valor mínimo*, Tamanho
+#* Se os valores forem fotos inteiros ou reais.
+lista = [1, 2, 3, 4, 5, 6]
+
+print(sum(lista)) #soma
+print(max(lista)) #Máximo valor
+print(min(lista)) #Mínimo valor
+print(len(lista)) #Tamanho da lista
+--------------------------------------------
+#Transformar lista em tupla
+
+lista = [1, 2, 3, 4, 5, 6]
+print(lista)
+print(type(lista))
+
+tupla = tuple(lista)
+print(tupla)
+print(type(tupla))
+--------------------------------------------
+#Desenpacotamento de listas
+
+lista = [1, 2, 3]
+num1, num2, num3 = lista
+#OBS: Se tivermos mais elementos para desempacotar do que variáveis para receber valores,
+# teremos ValueError, e o contrário também é verdadeiro.
+print(num1)
+print(num2)
+print(num3)
+--------------------------------------------
+#Copiando uma lista para outra (Shallow Copy e Deep Copy)
+#Forma 1: Deep Copy
+
+lista = [1, 2, 3]
+print(lista)
+
+nova = lista.copy()
+print(nova)
+
+nova.append(4)
+print(lista)
+print(nova)
+# Ao utilizar lista.copy() copiamos dados da lista para uma nova lista, mas elas
+#Ficaram totalmente independentes, ou seja, modifica uma lista, mas nao a outra
+#Em python isso se chama Deep copy (copia profunda)
+
+
+#forma 2: Shallow Copy
+lista = [1, 2, 3]
+print(lista)
+
+nova = lista #cópia
+print(nova)
+nova.append(4)
+print(lista)
+print(nova)
+
+#Veja que utilizamos a cópia via atribuição e copiamos os dados da lista para a nova lista, mas
+#apos realizar modificação em uma das listas, a modificação se refletiu em ambas as listas
+#Isso em python é chamado de Shallow copy
+--------------------------------------------
+"""""
+
+
+
+
