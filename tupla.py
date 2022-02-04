@@ -65,6 +65,109 @@ print(max(tupla))
 print(min(tupla))
 print(len(tupla))
 --------------------------------------------
+#concatenação de tuplas
 
+tupla1 = (1,2,3)
+print(tupla1)
+
+tupla2 = (4,5,6)
+
+print(tupla1+tupla2) #tuplas são imutaǘeis
+print(tupla1)
+print(tupla2)
+
+tupla3 = tupla1+tupla2
+print(tupla3)
+print(tupla1)
+print(tupla2)
+
+tupla1=tupla1+tupla2 #Tuplas são imutáveis, mas podemos sobrescrever seus valores
+print(tupla1)
+--------------------------------------------
+#Verificar se determinado elemento está contido na tupla
+
+tupla = (1, 2, 3)
+
+print(3 in tupla)
+--------------------------------------------
+
+#Iterando sobre uma tupla
+
+tupla = (1,2,3)
+
+for n in tupla:
+    print(n)
+
+for indice, valor in enumerate(tupla):
+    print(indice, valor)
+--------------------------------------------
+
+#Contando elementos dentro de uma tupla
+
+tupla = ('a', 'b', 'c', 'd', 'a', 'b')
+
+print(tupla.count('a'))
+
+escola = tuple('Geek University')
+
+print(escola)
+
+print(escola.count('e'))
+--------------------------------------------
+
+#Dicas na utilização de tuplas
+
+#Devemos utilizar tuplas SEMPRE que não precisarmos modificar os dados contidos em uma coleção
+
+#Exemplo 1:
+
+meses = ('Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho','Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro','Dezembro')
+print(meses)
+
+#O acesso a elementos de uma tupla também e'semelhante a de uma lsita
+
+print(meses[5])
+
+#Iterar com while
+
+i = 0
+while i <len(meses):
+    print(meses[i])
+    i = i+1
+
+--------------------------------------------
+# Verificamos em qual índice um elemento está na tupla
+
+print(meses.index('Junho')) #Será retornado o primeiro item procurado, caso haja mais repetições do msm
+
+#OBS: Caso o elemento nao exista, será gerado ValueError.
+--------------------------------------------
+
+#Slicing
+
+#tupla[inicio:fim:passo]
+
+print(meses[5:9])
+--------------------------------------------
+
+# Por quê utilizar tuplas?
+
+# - Tuplas são mais rápidas do que listas
+# - Tuplas deixam seu código mais seguro (porque trabalhar com elementos imutáveis traz segurança)
+--------------------------------------------
+#Copiando uma tupla para outra
+
+tupla1= (1,2,3)
+
+nova = tupla1 #Na tupla não existe o problema de Shallow Copy
+
+print(nova)
+print(tupla1)
+
+outra = (4,5,6)
+
+nova = nova + outra
+print(nova)
+print(tupla1)
 """""
 
