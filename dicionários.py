@@ -7,8 +7,8 @@ Dicionários são coleções do tipo chave/ valor.
 #É um mapeamento entre chave e valor
 
 #Ideia de chave e valor em listas, isto é, índices e valores
-[0,1,2]
-[1,2,3]
+indice -[0,1,2]
+valor  -[1,2,3]
 
 #Nos dicionarios, isso fico explicito ao em vez de implícita
 
@@ -134,7 +134,7 @@ print(receita)
 ret = receita.pop('mar')
 print(ret)
 print(receita)
-#OBS1: Aqui precisamos semrpe informar a chaver, e caso nao encontre o elemento, um KeyError é retornado
+#OBS1: Aqui precisamos semrpe informar a chave, e caso nao encontre o elemento, um KeyError é retornado
 
 #OBS2: Ao removermos um objeto, o valor desde objeto é sempre retornado.
 
@@ -202,7 +202,7 @@ carrinho.append(produto2)
 
 print(carrinho)
 
-#Desta forma, facilmente adicionamos ou removemos prodyutos no carrinho em cada produto
+#Desta forma, facilmente adicionamos ou removemos produtos no carrinho em cada produto
 # podemos ter a carteza sobre cada informação
 ------------------------------------------------------------
 # Métodos de diconarios
