@@ -66,7 +66,7 @@ print(f'Dicio: {dic} com {len(dic)}')
 s = {99, 2, 34, 23, 2, 12, 1, 44, 5, 34}
 print(f'Set: {s} com {len(s)}')
 ------------------------------------------------------------
-#Assim como todo utro conjunto Python, podemos colocar tipos de dados misturados em sets
+#Assim como todo outro conjunto Python, podemos colocar tipos de dados misturados em sets
 
 s = {1, 'b', 'True', 34.22, 44}
 print(s)
@@ -77,9 +77,6 @@ print(type(s))
 for valor in s:
     print(valor)
 ------------------------------------------------------------
-
-"""""
-
 #Usos interessantas com sets
 
 #Imagine que fizemos um formulário de cadastro de visitantes de visitantes em uma feira ou museu
@@ -88,18 +85,117 @@ for valor in s:
 #Nós adicionamos cada cidade em uma lista Pythonb, 
 # já que em uma lista podemos adicionar novos elementos e ter repetição
 
+cidades = ['Belo Horizonte', 'São paulo', 'Campo grande','Cuiaba','Campo grande', 'São paulo', 'Cuiaba']
+print(cidades)
+print(len(cidades))
 
+#Agora precisamos saber quantas cidades distintas temos
+# O que você faria? Loop na lista?
+# podemos utilizar o stet para isso:
 
+print(len(set(cidades)))
+------------------------------------------------------------
+#Adicionando elementos em um conjunto
 
+s = {1,2,3}
 
+s.add(4)
+s.add(4) #Duplicidade nao gera erro, simplesmente é ignorado.
+print(s)
+------------------------------------------------------------
+#Remover elementos em um conjunto
 
+s = {1,2,3}
+print(s)
 
+#Forma 1
 
+s.remove(3) #informa o valor a ser removido
+print(s)
 
+#OBS: caso o valor n seja encontrado, será gerado erro KeyError, nenhum valor é retornado.
 
+#Forma 2
 
+s.discard(2) 
+#s.discard(22)
+#OBS: Se o valor não for encontrado, nenhum erro é gerado.
+print(s)
+------------------------------------------------------------
+#Copiando um conjunto para outro
 
+#Forma 1 - Deep copy
+s = {1,2,3}
+print(s)
 
+novo = s.copy()
+print(novo)
 
+novo.add(4)
 
+print(s)
+print(novo)
 
+#Forma 2 - Shallow copy
+s = {1,2,3}
+print(s)
+
+novo = s
+
+novo.add(4)
+print(novo)
+print(s)
+------------------------------------------------------------
+#Podemos remover todos os itens de um conjunto
+
+s = {1,2,3}
+s.clear()
+print(s)
+------------------------------------------------------------
+#Métodos matemáticos de Conjunto
+
+#Imagine que temso 2 conjuntos, um contendo estudantes do curso python
+#  e um do curso de java
+
+estudante_python = {'Marcos', 'patricia', 'Ellen', 'Pedro', 'julia', 'guilherme'}
+estudantes_java = {'Fernando', 'gustavo', 'julia', 'ana', 'Patricia'}
+
+#Veja qeu alguns alunos que estudam python, estudam Java
+
+#Precisamos gerar um conjunto com nomes de estudantes únicos
+
+#FOrma 1 - Union
+
+unicos1 = estudante_python.union(estudantes_java)
+#{'Patricia', 'julia', 'Marcos', 'Fernando', 'Pedro', 'patricia', 'ana', 'gustavo', 'Ellen', 'guilherme'}
+print(unicos1)
+
+#Forma 2 - Utilizando caractere pipe ' | '
+uncos2 = estudante_python|estudantes_java
+
+print(uncos2)
+------------------------------------------------------------
+#Gerar um conjunto de estudantes que estão em ambos os cursos
+
+#Forma 1 - Intersection
+
+ambos1 = estudante_python.intersection(estudantes_java)
+print(ambos1)
+
+#Forma 2 - Utilizando o &
+
+ambos2 = estudante_python & estudantes_java
+print(ambos2)
+------------------------------------------------------------
+"""""
+
+estudante_python = {'Marcos', 'patricia', 'Ellen', 'Pedro', 'julia', 'guilherme'}
+estudantes_java = {'Fernando', 'gustavo', 'julia', 'ana', 'patricia'}
+
+# Gerar um conjunto que não esao no outro curso
+
+so_python = estudante_python.difference(estudantes_java)
+print(so_python)
+
+so_java = estudantes_java.difference(estudante_python)
+print(so_java)
