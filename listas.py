@@ -1,7 +1,7 @@
 """""
 Listas (list)
 
->> Listas em python funciona como vetores/ matrizes (arrays) em outras linguagens,
+>> Listas em python funciona como vetores/ matrizes (arrays), como em outras linguagens,
 com a diferença de serem DINÂMICOS e também de podermos colocar QUALQUER tipo de dado
 
 Linguagens C/Java: Arrays
@@ -353,7 +353,12 @@ print(nova)
 #Isso em python é chamado de Shallow copy
 --------------------------------------------
 """""
-
+lista1 = [1,2,3,4,5,6,7,8,9,10]
+num = int(input(''))
+if num in lista1:
+    print(f'Encontrei o número {num}... ')
+else:
+    print(f'Nao encontrado o número {num}... ')
 
 
 
